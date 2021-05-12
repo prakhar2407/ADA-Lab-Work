@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
  
-class DFS{
+class Graph{
     private int V; 
 
     private LinkedList<Integer> adj[];
