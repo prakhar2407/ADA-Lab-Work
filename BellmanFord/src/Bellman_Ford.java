@@ -1,5 +1,8 @@
 public class Bellman_Ford {
-    public  static void bellmanFordAlgo(int G[][], int V, int E, int source) {
+
+
+    public  static void bellmanFordAlgo(int G[][], int V, int E, int source)
+    {
 
         int []dis = new int[V];
         for (int i = 0; i < V; i++)
@@ -7,15 +10,19 @@ public class Bellman_Ford {
 
         dis[source] = 0;
 
-        for (int i = 0; i < V - 1; i++) {
-            for (int j = 0; j < E; j++) {
+        for (int i = 0; i < V - 1; i++)
+        {
+
+            for (int j = 0; j < E; j++)
+            {
                 if (dis[G[j][0]] != Integer.MAX_VALUE && dis[G[j][0]] + G[j][2] < dis[G[j][1]])
                     dis[G[j][1]] = dis[G[j][0]] + G[j][2];
             }
         }
 
 
-        for (int i = 0; i < E; i++) {
+        for (int i = 0; i < E; i++)
+        {
             int x = G[i][0];
             int y = G[i][1];
             int weight = G[i][2];
@@ -30,18 +37,19 @@ public class Bellman_Ford {
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         int V = 5;
         int E = 8;
 
 
         int graph[][] = {
-                { 0, 1, -1 },
-                { 0, 2, 6 },
+                { 0, 1, 2 },
+                { 0, 2, 7 },
                 { 1, 2, 9 },
                 { 1, 3, -2 },
-                { 1, 4, -7 },
-                { 3, 2, 3 },
+                { 1, 4, 7 },
+                { 3, 2, -3 },
                 { 3, 1, 2 },
                 { 4, 3, 8 }
         };
